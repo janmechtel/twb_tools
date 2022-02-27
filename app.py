@@ -140,7 +140,7 @@ def get_calc(file):
                         calc_name = item.attrib['name']
                     else:
                         calc_name = item.attrib['name']
-                    calc_raw_formula = item.find("calculation").attrib["formula"]
+                    calc_raw_formula = item.find("calculation").attrib.get("formula","")
                     calc_comment = ''
                     calc_formula = ''
                     for line in calc_raw_formula.splitlines():
