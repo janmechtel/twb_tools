@@ -12,13 +12,15 @@ import time
 app = Flask(__name__)
 
 ALLOWED_EXTENSIONS = {'twb'}
-UPLOAD_FOLDER = '/Users/p-73/PycharmProjects/flask/myproject/upload/'
-OUTPUT_FOLDER = '/Users/p-73/PycharmProjects/flask/myproject/output/'
+UPLOAD_FOLDER = 'upload\\'
+OUTPUT_FOLDER = 'output\\'
 
 app.config["TEMPLATES_AUTO_RELOAD"] = True
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 app.config['OUTPUT_FOLDER'] = OUTPUT_FOLDER
 app.config['MAX_CONTENT_PATH'] = 50000
+app.secret_key = 'kjhadsfkfdsiuwebrb2847463jdspsdjKHJSDFH'
+
 
 now = time.time()
 
@@ -698,5 +700,4 @@ def translate_twb(file,src,dest,hashid):
     tree.write(output+'.twb', encoding="UTF-8")
 
 if __name__ == "__main__":
-    app.secret_key = 'AoAv38dAf3A0ZTvE392jdjsvRBKN72v765f?RT'
     app.run()
